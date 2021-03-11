@@ -62,7 +62,7 @@ python3  -c "from models import *; convert('training/yolov3-1clstochar.cfg', 'we
 
 | Train.py (for LP) |
 | ------------- |
-| ![Capture5](https://user-images.githubusercontent.com/53394692/110754021-8e3e9400-825c-11eb-9ed1-5a263ef9f284.PNG) |
+| ![newcapture1](https://user-images.githubusercontent.com/53394692/110774811-7292b800-8273-11eb-8103-bfb5e660e042.PNG) |
 
 | Train.py (for Character) |
 | ------------- |
