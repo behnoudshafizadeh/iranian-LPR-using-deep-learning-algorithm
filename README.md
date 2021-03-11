@@ -1,17 +1,22 @@
-# vehicle-Recognition-using-deep-learning-algorithm-
-vehicle recognition using YOLO-V3
+# LP-Recognition-using-deep-learning-algorithm
+License-plate recognition using YOLO-V3
 
 ## Discription
-> in this project,in summary,first we use vehicle image dataset about ~18000 iamges,in 123 various classes,and lebel them then we train our dataset with YOLO-V3 Object Detection model,and test model with our weights,we found that due to imbalance dataset (is not equal number of images in our classes),we get ~0.6 accuracy in our traiing dataset,so we try that by decreasing the imbalance dataset and decrease our classes to 35 vehicle model,approximately,we get ~0.8 accuracy by balancing dataset,the summary of our result is documented in this github repo.in below you see our compact model architecture:
+> in this project,in summary,we use two end-end deep neural netwroksin the first phase we use and YOLO-V3 for detecting possible license-plates and after detecting them and getting their boundingbox coordinates ,we croped them (each LP) as single image and was forwarded to seconde YOLO-V3 for detecting possible Characters,in first phase for detecting LP,we achieved 0.96 accuracy in training,and in Character Recognition phase we get 0.86 accuracy.
 
-> ![Capture1](https://user-images.githubusercontent.com/53394692/110747263-5a12a580-8253-11eb-998d-2fab96ff9515.PNG)
+> ![Capture1](https://user-images.githubusercontent.com/53394692/110437818-05442300-80cb-11eb-82e2-2c9efeaffc5f.PNG)
 
 ## DATASET
-> our dataset was captured by group of people in the car trading company in Tehran,so by their authority and permit,we accessed their dataset about ~18000 images,about ~123 various classes of vehicle brand,in different conditions such as (light,illumination,angle,camera distance,different weather conditions(snowy,foggy,rainy,...)) and captured with  different phone cameras with different resolution quality,we have prepared dataset for training process.below,you see sample of our datset:
+> in this project,fist I captured images dataset using mobile phone cameras with different resolution quality such as (Samsung A5/A50,LG,Apple iphone5) in different conditions such as (illumination,contrast,angle,distance from camera,weather condition such as(rainy,snowy,foggy,...)) by walking in road,highway or high speed cars in fereydounkenar and tehran city.i approximately provided ~7000 images for this project the summary of our result is documented in this github repo.in below you see our compact model architecture:
 
 |                         dataset                                       | 
 | --------------------------------------------------------------------- | 
-| ![Capture2](https://user-images.githubusercontent.com/53394692/110747559-ce4d4900-8253-11eb-90b3-0077f2b2aeeb.jpg) | 
+| ![Capture2](https://user-images.githubusercontent.com/53394692/110747 | 
+
+
+
+
+
 | ![Capture3](https://user-images.githubusercontent.com/53394692/110747616-ddcc9200-8253-11eb-9606-cef4d51e7377.jpg) |
 | ![Capture4](https://user-images.githubusercontent.com/53394692/110747654-ed4bdb00-8253-11eb-8100-9a595ba61421.jpg) |
 
