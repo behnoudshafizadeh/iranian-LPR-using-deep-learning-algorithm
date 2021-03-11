@@ -71,15 +71,22 @@ python3  -c "from models import *; convert('training/yolov3-1clstochar.cfg', 'we
 ## testing models
 > in the last step for testing our models,must run below instruction:
 ```
-python3 detect.py --source test.png --weights converted.weights --cfg training/yolov3-123clstomodels.cfg --names training/objecttomodels.names --img-size 416
+for LP:
+python3 detect.py --source test.png --weights converted.weights --cfg training/yolov3-1cls.cfg --names training/object.names --img-size 416
+
+for Character:
+python3 detect.py --source test.png --weights converted.weights --cfg training/yolov3-1clstochar.cfg --names training/objecttochar.names --img-size 416
 ```
 > after running that your output was set in `output` directory in root path.see instances of outputs below:
 
-|    output (Vehicle Recognition)  |                   
+|    output (LP)  |                   
 | -------------------------------- |  
-| ![Capture6](https://user-images.githubusercontent.com/53394692/110754827-7ca9bc00-825d-11eb-8bd1-118ef8f97733.PNG) |
- 
+| ![output-lp](https://user-images.githubusercontent.com/53394692/110775600-56434b00-8274-11eb-9c8f-5b7c53c47c4b.PNG) |
 
+|    output (Character)  |                   
+| -------------------------------- |  
+| ![output-char](https://user-images.githubusercontent.com/53394692/110775763-8985da00-8274-11eb-8db8-fea3ce92d712.PNG) |
+ 
 
 ## LICENSE
 > this project was done by me `behnoud shafizadeh` and my co-worker `navid pourhadi` in the kharazmi university lab,supervised by `DR.Farshad Eshghi` and `DR.Manoochehr KelarEstaghi`,so the full source of code and dataset in this project are out authority and relatede to `kharazmi university of tehran`,so if you would like to contiribute with our group and access to out document,please contact with our emails : `behnud.shafizadeh@gmail.com` and `npourhadi1998@gmail.com`,thanks for your consideration.
