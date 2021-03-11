@@ -1,0 +1,7 @@
+classes= 44
+train= /home/user1/YoloV3-Custom-Object-Detection-master/training/train.txt
+valid= /home/user1/YoloV3-Custom-Object-Detection-master/training/test.txt
+names= /home/user1/YoloV3-Custom-Object-Detection-master/training/objecttochar.names
+backup=backup/
+eval=coco
+
