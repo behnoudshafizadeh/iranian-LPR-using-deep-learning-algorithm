@@ -11,18 +11,18 @@ License-plate recognition using YOLO-V3
 
 |                         dataset                                       | 
 | --------------------------------------------------------------------- | 
-| ![Capture2](https://user-images.githubusercontent.com/53394692/110747 | 
+| ![capture3](https://user-images.githubusercontent.com/53394692/110442347-fca21b80-80cf-11eb-80e4-a4447fe526e4.PNG) | 
 
-
-
-
-
-| ![Capture3](https://user-images.githubusercontent.com/53394692/110747616-ddcc9200-8253-11eb-9606-cef4d51e7377.jpg) |
-| ![Capture4](https://user-images.githubusercontent.com/53394692/110747654-ed4bdb00-8253-11eb-8100-9a595ba61421.jpg) |
 
 ## Preprocess
-> for preparing image dataset for training phase,i labeled my images helping by [Make Sense](https://www.makesense.ai/) online website,with easy tools i labeled my `Vehicle`  and saved their bounding box coordinates in `.txt` files,i downloaded them from website,so each image in my dataset had one `.txt` label.with compelet detailes,we will explain this procedure in another `repo` in my github.
+> for preparing image dataset for training phase,i labeled my images helping by [Make Sense](https://www.makesense.ai/) online website,with easy tools i labeled my `Vehicle`  and saved their bounding box coordinates in `.txt` files,i downloaded them from website,so each image in my dataset had one `.txt` label.with compelet detailes,we will explain this procedure in another `repo` in my github.furthermore,i augmented my orginal dataset in 5 conditions (foggy,rainy,snowy,darken,brighten) because of getting better accuracy in training phase and better learning in different weather conditions.all of all,my data set was increased to ~40000 images approximately.in below you can see this process:
 
+|                         augmented-dataset                                       | 
+| --------------------------------------------------------------------- | 
+| ![capture2](https://user-images.githubusercontent.com/53394692/110441840-738ae480-80cf-11eb-8ffb-cbdc2ef007a7.PNG) | 
+
+
+ 
 ## training procedure
 * for training vehicle recognition phase,you must set a few files,so follow below instructions:
 
