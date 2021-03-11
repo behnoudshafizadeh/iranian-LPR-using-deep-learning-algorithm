@@ -1,5 +1,5 @@
 # LP-Recognition-using-deep-learning-algorithm
-License-plate recognition using YOLO-V3
+License-plate(LP) recognition using YOLO-V3
 
 ## Discription
 > in this project,in summary,we use two end-end deep neural netwroksin the first phase we use and YOLO-V3 for detecting possible license-plates and after detecting them and getting their boundingbox coordinates ,we croped them (each LP) as single image and was forwarded to seconde YOLO-V3 for detecting possible Characters,in first phase for detecting LP,we achieved 0.96 accuracy in training,and in Character Recognition phase we get 0.86 accuracy.
@@ -24,36 +24,49 @@ License-plate recognition using YOLO-V3
 
  
 ## training procedure
-* for training vehicle recognition phase,you must set a few files,so follow below instructions:
+* for LP recognition phase,you must set a few files,so follow below instructions:
 
-  * 1. put `.cfg` file related to YOLO-V3 of Vehicle Recognition `yolov3-123clstomodels.cfg`  in `cfg` directory,for getting more information about `.cfg` file,follow this [link](https://medium.com/analytics-vidhya/custom-object-detection-with-yolov3-8f72fe8ced79) about configuring YOLOV3 for your object detection task.
+  * 1. put `.cfg` files related to YOLO-V3 of LP Recognition `yolov3-1cls.cfg` and Character Recognition `yolov3-1clstochar.cfg` in `cfg` directory,for getting more information about `.cfg` file,follow this [link](https://medium.com/analytics-vidhya/custom-object-detection-with-yolov3-8f72fe8ced79) about configuring YOLOV3 for your object detection task.
   
   * 2. put your dataset images and labels in `training/images` directory `training/labels` directory.
   
-  * 3. set label names in file `objecttomodels.names`  in `training` directory.
+  * 3. set label names in files `object.names` and `objecttochar.names`  in `training` directory.
   
-  * 4. set splitted dataset of train and test iamges in format of `.txt` as `train.txt` and `test.txt` in `training` directory.for splitting data set run to codes as `train_testtomodels.py`,for getting better information go to this [link](https://medium.com/analytics-vidhya/custom-object-detection-with-yolov3-8f72fe8ced79)
+  * 4. set splitted dataset of train and test iamges in format of `.txt` as `train.txt` and `test.txt` in `training` directory.for splitting data set run to codes as `train_test.py` and  `train_testtochar.py`,for getting better information go to this [link](https://medium.com/analytics-vidhya/custom-object-detection-with-yolov3-8f72fe8ced79)
   
-  * 5. set pathes of `train.txt`,`test.txt` and `objecttomodels.names` for  YOLO-V3 as `trainertomodels.data`  in `training` directory. 
+  * 5. set pathes of `train.txt`,`test.txt` ,`object.names` and `objecttochar.names` for  YOLO-V3 as `trainer.data` and `trainertochar.data` in `training` directory. 
    
   * 6. put pretrained of YOLO-V3 weights as `yolov3.weights` in `weights` directory.due to large size of weight,i dont put it in github directory,if you would like to get it ,please contact with me via my email address. 
 
 * after confuiguring,then you run `train.py` below command for training in `YoloV3-Custom-Object-Detection-master` directory:
 ```
-python3 train.py --epochs 110 --data training/trainertomodels.data --cfg training/yolov3-123clstomodels.cfg --batch 8 --accum 1
+for LP Recognition training:
+python3 train.py --epochs 110 --data training/trainer.data --cfg training/yolov3-1cls.cfg --batch 8 --accum 1
+
+for Character Recognition training:
+python3 train.py --epochs 110 --data training/trainertochar.data --cfg training/yolov3-1clstochar.cfg --batch 8 --accum 1
 ```
 * after ending programs,you must run these instructions for converting `pytorch` format to `darknet` format,after that the `converted.weights` is build in root directory.due to large size of weight,i dont put it in github directory,if you would like to get it ,please contact with me via my email address. 
 
 ```
-python3  -c "from models import *; convert('training/yolov3-123clstomodels.cfg', 'weights/best.pt')"
+for LP:
+python3  -c "from models import *; convert('training/yolov3-1cls.cfg', 'weights/best.pt')"
+
+for Character:
+python3  -c "from models import *; convert('training/yolov3-1clstochar.cfg', 'weights/best.pt')"
+
 ```
 
 ## Graph Results
 > after running `train.py`,you can see the different measures for obeject detection in diiferent graphs as `results.png` in root directory.
 
-| Train.py (Vehicle Recognition) |
+| Train.py (for LP) |
 | ------------- |
 | ![Capture5](https://user-images.githubusercontent.com/53394692/110754021-8e3e9400-825c-11eb-9ed1-5a263ef9f284.PNG) |
+
+| Train.py (for Character) |
+| ------------- |
+| ![newcapture](https://user-images.githubusercontent.com/53394692/110774582-352e2a80-8273-11eb-9a21-f0ee58a248d2.PNG) |
 
 ## testing models
 > in the last step for testing our models,must run below instruction:
